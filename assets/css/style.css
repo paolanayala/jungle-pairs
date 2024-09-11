@@ -4,6 +4,11 @@ body, h1, p {
     padding: 0;
     box-sizing: border-box;
 }
+main div.create-box {
+  display: flex;
+  flex-wrap: wrap;
+
+}
 
 /* Container for flashcards */
 .flashcards-container {
@@ -69,12 +74,12 @@ header {
   width: auto;
 }
 
-/*body {
+body {
   min-height: 100vh;
   min-width: 100vw;
   background-color: #52e4a4;
   color: white;
-}*/
+}
 
 h1 {
       text-align: center;
