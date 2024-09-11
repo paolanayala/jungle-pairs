@@ -61,3 +61,7 @@ body, h1, p {
     background-color: #e0f7fa; /* Light blue background for back */
     color: #00796b; /* Darker green text color */
 }
+header {
+   display: flex;
+   justify-content: center;
+}
