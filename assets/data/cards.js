@@ -1,4 +1,4 @@
-[
+const cards = [
     {
         "image": "./assets/images/lion.avif",
         "name": "lion"
