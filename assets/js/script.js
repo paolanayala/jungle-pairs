@@ -49,7 +49,7 @@ while (currentIndex !== 0) {
 
 //Restart Function
 function restart() {
-resetBoard();
+//resetBoard();
 shuffleCards();
 generateCards();
 }
