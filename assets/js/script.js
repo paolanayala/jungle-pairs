@@ -32,3 +32,19 @@ fetch("./data/cards.json")
 
 //Restart Function
 
+//Timer Function
+let timeLeft = 60;
+const timerElement = document.getElementById('time');
+        ///starts timer when game starts
+
+const gameRunTime = setInterval(() => {
+    if (timeLeft > 0) {
+        timeLeft--;
+        timerElement.textContent = timeLeft;
+    } else {
+        clearInterval(gameRunTime);
+        alert('Out of time! Game Over ');
+    }
+}, 1000
+);
+
