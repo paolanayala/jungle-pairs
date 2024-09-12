@@ -1,51 +1,52 @@
 [
     {
-        "image":" ",
-        "name": " "
+        "image": "./assets/images/lion.avif",
+        "name": "lion"
     },
 
     {
-        "image": " ",
-        "name": " "
+        "image": "./assets/images/parrot.avif",
+        "name": "parrot"
     },
 
     {
-        "image": " ",
-        "name": " "
+        "image": "./assets/images/Cat.avif",
+        "name": "cat"
     },
 
     {
-        "image": " ",
-        "name": " "
+        "image": "./assets/images/Hippo.avif",
+        "name": "hippo"
     },
 
     {
-        "image": " ",
-        "name": " "
+        "image": "./assets/images/Wolf.avif",
+        "name": "wolf"
     },
 
     {
-        "image": " ",
-        "name": " "
+        "image": "./assets/images/Dog.avif",
+        "name": "dog"
     },
 
     {
-        "image": " ",
-        "name": " "
+        "image": "./assets/images/Zebra-unsplash.jpg",
+        "name": "zebra"
     },
 
     {
-        "image": " ",
-        "name": " "
+        "image": "./assets/images/Hyena.avif",
+        "name": "hyena"
     },
 
     {
-        "image": " ",
-        "name": " "
+        "image": "./assets/images/brown-bear.avif",
+        "name": "bear"
     },
 
     {
-        "image": " ",
-        "name": " "
-    }
+        "image": "./assets/images/Elephant-unsplash",
+        "name": "elephant"
+    },
+
 ]
