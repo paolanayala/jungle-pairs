@@ -18,10 +18,22 @@ let Time = 0;
 
 //DATA - Get Data From Json
 console.log(cards)
-    // shuffleCards();
+    shuffleCards();
     // generateCards();
 
 //Shuffle Card Function
+function shuffleCards() {
+let currentIndex = cards.length,
+    randomIndex,
+    temporaryValue;
+while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = cards[currentIndex];
+    cards[currentIndex] = cards[randomIndex];
+    cards[randomIndex] = temporaryValue;
+ }
+}
 
 //Generate Card Function
 
@@ -36,7 +48,11 @@ console.log(cards)
 //Reset Function
 
 //Restart Function
-
+function restart() {
+resetBoard();
+shuffleCards();
+generateCards();
+}
 //Timer Function
 let timeLeft = 60;
 const timerElement = document.getElementById('time');
