@@ -5,20 +5,22 @@
     <meta http-equiv="x-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jungle Pairs</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <header>
     <h1 class="header">Jungle Pairs</h1>     
 </header>
+<br><br>
 <main>
-    <h1>Flashcards</h1>
     <div class="animal-grid">
          
         <div>
             <button onclick="showCreatecardBox">New Card</button>
+            <br>
             <button onclick="">reset</button>
         </div>
+        <br>
         <!-- Flashcard for each animal -->
        <div class="create-box">
         <div class="flashcard">
@@ -61,19 +63,64 @@
             <div class="flashcard-front">Frog</div>
             <div class="flashcard-back">Ribbit</div>
         </div>
+
+            <div class="flashcard">
+                <div class="flashcard-front">Lion</div>
+                <div class="flashcard-back">Roar</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard-front">Cow</div>
+                <div class="flashcard-back">Moo</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard-front">Dog</div>
+                <div class="flashcard-back">Bark</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard-front">Cat</div>
+                <div class="flashcard-back">Meow</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard-front">Duck</div>
+                <div class="flashcard-back">Quack</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard-front">Sheep</div>
+                <div class="flashcard-back">Baa</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard-front">Horse</div>
+                <div class="flashcard-back">Neigh</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard-front">Pig</div>
+                <div class="flashcard-back">Oink</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard-front">Elephant</div>
+                <div class="flashcard-back">Trumpet</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard-front">Frog</div>
+                <div class="flashcard-back">Ribbit</div>
+            </div>
         </div>
-    </div>
+    
 </main>
-    <script src="./assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
+    <br>
     <section class="top-3">
-        <ul class="timer">00:05</ul>
-        <div class="grid.container"></div>
-        <p>Score: <span class="score"></span></p>
+        <div class="grid.container"></div> <!-- why is this here? -->
+        <div>
+        <p id="timer">Time: <span id="time">60</span></p>
+        </div>
+        <br>
         <div class="actions">
             <button onclick="restart()">Restart</button>
         </div>
     </section>
-    <script src="index.js"></script>
+    <br>
+
 </body>
 
 </html>
