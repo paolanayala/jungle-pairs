@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Flashcards</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jungle Pairs</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<header>
-    <h1>Jungle Pairs</h1>
-</header>
 <body>
-    <header>
-        <h1>Flashcards</h1>
-        <div class="animal-grid">
-            <div class="animal-box">
-                <img src="Lion.jpg" alt="Lion">
+<header>
+    <h1 class="header">Jungle Pairs</h1>     
+</header>
+<main>
+    <h1>Flashcards</h1>
+    <div class="animal-grid">
+        <div class="animal-box">
+            <img src="Lion.jpg" alt="Lion">
                 <div class="flashcard-back">Roar</div>
                 <h3>Lion</h3>
-</div>
+         </div>
          
         <div>
             <button onclick="showCreatecardBox">New Card</button>
@@ -65,14 +65,21 @@
         <div class="flashcard">
             <div class="flashcard-front">Frog</div>
             <div class="flashcard-back">Ribbit</div>
-        </header>
-        
-            </div>
+        </main>
+        </div>
         </div>
         </div>
     </div>
     <script src="./assets/js/script.js"></script>
-    
+    <section class="top-3">
+        <ul class="timer">00:05</ul>
+        <div class="grid.container"></div>
+        <p>Score: <span class="score"></span></p>
+        <div class="actions">
+            <button onclick="restart()">Restart</button>
+        </div>
+    </section>
+    <script src="index.js"></script>
 </body>
-</html>
 
+</html>
