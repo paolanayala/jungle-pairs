@@ -133,6 +133,9 @@ shuffleCards();
 function restart() {
     flashcards.forEach(card => {
         card.classList.remove ('flipped', 'removed');
+        if (!card.parentElement) {
+            document.querySelector('.create-box').appendChild(card);
+        }
     })
 //resetBoard();
 shuffleCards();
