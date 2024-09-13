@@ -15,11 +15,9 @@ const flashcards = document.querySelectorAll(".flashcard");
 let firstCard, secondCard;
 let lockBoard = false;
 let Time = 0;
-let matchedPairs = 0; //Declare matchedPairs at the top level
+let matchedPairs = 0;
 
-const timeElement = document.getElementById('time');
-const startButton = document.getElementById('startBtn');
-const restartButton = document.getElementById('restartBtn');
+
 //DATA - Get Data From Json
 console.log(cards)
     shuffleCards();
@@ -83,12 +81,43 @@ function checkForMatch() {
         matchedPairs++; // If it's a match, hide the cards
         hidePair();
         if  (matchedPairs === flashcards.length / 2) {
-            displayMessage('Congratulations! You won!') ; //Display win message
+            displayMessage('Congratulations! You won! Fastest Time: ${fastestTime} seconds') ; //Display win message
             clearInterval(gameRunTime); // Stop the timer
         }
 
     } else {
         unflipCards(); // If they don't match, unflip the cards
+    }
+}
+// Function to display a custom message with a "Play Again" button
+function displayMessage(message) {
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('message-container');
+    
+    const messageContent = document.createElement('div');
+    messageContent.classList.add('message-content');
+    messageContent.innerHTML = `<p>${message}</p>`;
+    
+    const playAgainButton = document.createElement('button');
+    playAgainButton.textContent = 'Play Again';
+    playAgainButton.addEventListener('click', () => {
+        document.body.removeChild(messageContainer);
+        restart(); // Restart the game when "Play Again" is clicked
+    });
+    
+    messageContent.appendChild(playAgainButton);
+    messageContainer.appendChild(messageContent);
+    document.body.appendChild(messageContainer);
+    
+    console.log("Message displayed:", message);
+}
+// Save the fastest time to localStorage----------------------------->
+function saveFastestTime() {
+    const timeTaken = 60 - timeLeft; // Calculate the time taken to complete the game
+    if (fastestTime === null || timeTaken < fastestTime) {
+        fastestTime = timeTaken;
+        localStorage.setItem('fastestTime', fastestTime); // Save the new fastest time
+        console.log(`New fastest time saved: ${fastestTime} seconds`);
     }
 }
 
@@ -141,13 +170,23 @@ shuffleCards();
 
 //Reset Function
 //Restart Function
+// function restart() {
+//     flashcards.forEach(card => {
+//         card.classList.remove('flipped', 'hidden');
+//         if (!card.parentElement) {
+//             document.querySelector('.create-box').appendChild(card);
+//         }
+//     });
 function restart() {
+    clearInterval(gameRunTime); // Clear the current timer
     flashcards.forEach(card => {
         card.classList.remove('flipped', 'hidden');
         if (!card.parentElement) {
             document.querySelector('.create-box').appendChild(card);
         }
     });
+    startGame(); // Restart the game
+    console.log("Game restarted");
 
     matchedPairs = 0; // Reset matched pairs
     shuffleCards();

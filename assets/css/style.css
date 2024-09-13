@@ -5,11 +5,12 @@ body, h1, p {
     box-sizing: border-box;
 }
 main div.create-box {
-  display: flex;
-  flex-wrap: wrap;
-justify-content: center;
+    display: grid;
+    justify-content: center;
+    grid-gap: 16px;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(2, calc(100px / 2 * 3));
 }
-
 /* Container for flashcards */
 .flashcards-container {
     display: flex;
@@ -151,4 +152,34 @@ p {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+.message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.message-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.message-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.message-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
