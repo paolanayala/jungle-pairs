@@ -117,4 +117,38 @@ p {
     background-size: cover;
     backface-visibility: hidden;
   }
- 
+
+  .flashcard {
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.flashcard.flipped .flashcard-front {
+    transform: rotateY(180deg);
+}
+
+.flashcard.flipped .flashcard-back {
+    transform: rotateY(0);
+}
+
+.flashcard .flashcard-front,
+.flashcard .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flashcard .flashcard-back {
+    transform: rotateY(180deg);
+}
+
+.flashcard.removed {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
