@@ -22,19 +22,7 @@ console.log(cards)
     shuffleCards();
     // generateCards();
 
-//Shuffle Card Function
-// function shuffleCards() {
-// let currentIndex = cards.length,
-//     randomIndex,
-//     temporaryValue;
-// while (currentIndex !== 0) {
-//     randomIndex = Math.floor(Math.random() * currentIndex);
-//     currentIndex -= 1;
-//     temporaryValue = cards[currentIndex];
-//     cards[currentIndex] = cards[randomIndex];
-//     cards[randomIndex] = temporaryValue;
-//  }
-// }
+
 function shuffleCards() {
     const createBox = document.querySelector('.create-box');
     for (let i = createBox.children.length; i >= 0; i--) {
