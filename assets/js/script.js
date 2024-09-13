@@ -115,6 +115,11 @@ shuffleCards();
 //Check for Match Function
 
 //Remove Pair Function
+function matchCards (img1, img2) {
+    if (img1 === img2) {
+        return console.log('card matched');
+    }
+}
 
 //Unflip Card Function
 
