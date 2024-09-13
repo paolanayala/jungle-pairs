@@ -113,13 +113,7 @@ function resetBoard() {
     lockBoard = false;
 }
 
-// Shuffle the cards initially (Optional)
-function shuffleCards() {
-    const createBox = document.querySelector('.create-box');
-    for (let i = createBox.children.length; i >= 0; i--) {
-        createBox.appendChild(createBox.children[Math.random() * i | 0]);
-    }
-}
+
 
 // USER INTERACTTIONS
 // a user clicks a card ...
