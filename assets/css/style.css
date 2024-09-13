@@ -52,13 +52,13 @@ justify-content: center;
     transform-style: preserve-3d;
 }
 
-.flashcard:hover .flashcard-front {
+/*.flashcard:hover .flashcard-front {
     transform: rotateY(180deg);
-}
+}*/
 
-.flashcard:hover .flashcard-back {
+/*.flashcard:hover .flashcard-back {
     transform: rotateY(0deg);
-}
+}*/
 
 /* Back side of the flashcard */
 .flashcard-back {
