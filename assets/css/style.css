@@ -5,11 +5,12 @@ body, h1, p {
     box-sizing: border-box;
 }
 main div.create-box {
-    display: inline-flex;
-    flex-wrap: wrap;
+    display: grid;
     justify-content: center;
+    grid-gap: 16px;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(2, calc(100px / 2 * 3));
 }
-
 /* Container for flashcards */
 .flashcards-container {
     display: flex;
