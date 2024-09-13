@@ -46,12 +46,11 @@ while (currentIndex !== 0) {
 //Unflip Card Function
 
 //Reset Function
-
 //Restart Function
 function restart() {
 //resetBoard();
 shuffleCards();
-generateCards();
+//generateCards();
 }
 //Timer Function
 let timeLeft = 60;
@@ -67,5 +66,5 @@ const gameRunTime = setInterval(() => {
         alert('Out of time! Game Over ');
     }
 }, 1000
-);
+); console.log(restart);
 
