@@ -17,6 +17,9 @@ let lockBoard = false;
 let Time = 0;
 let matchedPairs = 0; //Declare matchedPairs at the top level
 
+const timeElement = document.getElementById('time');
+const startButton = document.getElementById('startBtn');
+const restartButton = document.getElementById('restartBtn');
 //DATA - Get Data From Json
 console.log(cards)
     shuffleCards();
