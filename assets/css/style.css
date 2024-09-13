@@ -10,6 +10,7 @@ main div.create-box {
     grid-gap: 16px;
     grid-template-columns: repeat(5, 100px);
     grid-template-rows: repeat(2, calc(100px / 2 * 3));
+    
 }
 /* Container for flashcards */
 .flashcards-container {
@@ -83,7 +84,7 @@ header {
 body {
   min-height: 100vh;
   min-width: 100vw;
-  background-color: #52e4a4;
+  background-color: teal;
   color: white;
 }
 
@@ -91,6 +92,7 @@ h1 {
       text-align: center;
       font-weight: 700;
       font-size: 50px;
+      color: black;
 }
   
 p {
@@ -152,4 +154,31 @@ p {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+
+div .jungleTitle {
+font-size: 48px; 
+margin-bottom: 0; 
+margin-top: 8px"
+}
+
+div.startButton {
+    position:absolute;
+    background-color: white;
+    top: 50%;
+    padding: 16px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+div button.start {
+ margin-top: 12x;
+background-color: blue;
+border: none;
+color:white;
+padding: 8px 16px;
+border-radius: 5px;
+cursor: pointer;
 }

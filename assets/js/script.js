@@ -11,6 +11,8 @@
 
 //DEPENDENCIES
 const flashcards = document.querySelectorAll(".flashcard");
+const startButtonEl = document.querySelector('#startButtonEl')
+const startModalEl = document.querySelector('#startModalEl')
 // let cards = [];
 let firstCard, secondCard;
 let lockBoard = false;
@@ -119,9 +121,9 @@ function shuffleCards() {
 
 // INITIALIZATION
 // Call the shuffle function on page load------------------------------------>
-shuffleCards();
+//shuffleCards();
 // Call the shuffle function on page load
-shuffleCards();
+//shuffleCards();
 //Check for Match Function
 
 //Remove Pair Function
@@ -151,3 +153,8 @@ const gameRunTime = setInterval(() => {
 }, 1000
 ); console.log(restart);
 
+startButtonEl.addEventListener('click', () => {
+resetBoard()
+shuffleCards
+startModalEl.style.display = 'none'
+})
