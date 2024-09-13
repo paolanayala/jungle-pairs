@@ -131,9 +131,17 @@ shuffleCards();
 //Reset Function
 //Restart Function
 function restart() {
+    flashcards.forEach(card => {
+        card.classList.remove ('flipped', 'removed');
+        if (!card.parentElement) {
+            document.querySelector('.create-box').appendChild(card);
+        }
+    })
 //resetBoard();
 shuffleCards();
 //generateCards();
+timeLeft = 60; //Reset the timer back to 60secs 
+timerElement.textContent = timeLeft;
 }
 //Timer Function
 let timeLeft = 60;
