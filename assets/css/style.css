@@ -147,8 +147,8 @@ p {
     transform: rotateY(180deg);
 }
 
-.flashcard.removed {
+.hidden {
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
