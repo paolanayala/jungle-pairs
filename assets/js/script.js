@@ -37,7 +37,7 @@ while (currentIndex !== 0) {
 
 //Generate Card Function
 
-//Flip Card Functio// Select all flashcards----------------------> Kol input
+//Flip Card Function// Select all flashcards----------------------> Kol input
 
 // Add event listeners to all flashcards
 flashcards.forEach(card => card.addEventListener('click', flipCard));
@@ -62,7 +62,12 @@ function flipCard() {
 }
 
 function checkForMatch() {
-    let isMatch = firstCard.querySelector('.flashcard-back').textContent === secondCard.querySelector('.flashcard-back').textContent;
+        const firstCardBack = firstCard.dataset.animal
+        const secondCardBack = secondCard.dataset.animal
+    let isMatch = firstCardBack === secondCardBack;
+    console.log(firstCardBack);
+    console.log(secondCardBack);
+    //firstCard.querySelector('.flashcard-back').textContent === secondCard.querySelector('.flashcard-back').textContent;
 
     if (isMatch) {
         removePair(); // If it's a match, remove the cards
@@ -108,6 +113,11 @@ function shuffleCards() {
     }
 }
 
+// USER INTERACTTIONS
+// a user clicks a card ...
+
+
+// INITIALIZATION
 // Call the shuffle function on page load------------------------------------>
 shuffleCards();
 // Call the shuffle function on page load
