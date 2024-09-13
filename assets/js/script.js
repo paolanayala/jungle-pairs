@@ -37,8 +37,81 @@ while (currentIndex !== 0) {
 
 //Generate Card Function
 
-//Flip Card Function
+//Flip Card Functio// Select all flashcards----------------------> Kol input
 
+// Add event listeners to all flashcards
+flashcards.forEach(card => card.addEventListener('click', flipCard));
+
+function flipCard() {
+    if (lockBoard) return; // Prevent clicking if the board is locked
+    if (this === firstCard) return; // Prevent double-clicking the same card
+
+    this.classList.add('flipped');
+
+    if (!firstCard) {
+        // If it's the first card of the pair
+        firstCard = this;
+        return;
+    }
+
+    // If it's the second card
+    secondCard = this;
+    lockBoard = true; // Lock the board
+
+    checkForMatch();
+}
+
+function checkForMatch() {
+    let isMatch = firstCard.querySelector('.flashcard-back').textContent === secondCard.querySelector('.flashcard-back').textContent;
+
+    if (isMatch) {
+        removePair(); // If it's a match, remove the cards
+    } else {
+        unflipCards(); // If they don't match, unflip the cards
+    }
+}
+
+function removePair() {
+    setTimeout(() => {
+        // Optionally add an animation before removal
+        firstCard.classList.add('removed');
+        secondCard.classList.add('removed');
+
+        // Actually remove the cards from the DOM
+        setTimeout(() => {
+            firstCard.remove();
+            secondCard.remove();
+            resetBoard();
+        }, 500); // Adjust delay as needed for a smoother removal animation
+    }, 500); // Adjust delay if you want to show the cards for a brief moment before removal
+}
+
+function unflipCards() {
+    setTimeout(() => {
+        firstCard.classList.remove('flipped');
+        secondCard.classList.remove('flipped');
+        resetBoard();
+    }, 1000); // Adjust the delay to control how long the cards stay visible before flipping back
+}
+
+function resetBoard() {
+    // Reset the board state
+    [firstCard, secondCard] = [null, null];
+    lockBoard = false;
+}
+
+// Shuffle the cards initially (Optional)
+function shuffleCards() {
+    const createBox = document.querySelector('.create-box');
+    for (let i = createBox.children.length; i >= 0; i--) {
+        createBox.appendChild(createBox.children[Math.random() * i | 0]);
+    }
+}
+
+// Call the shuffle function on page load------------------------------------>
+shuffleCards();
+// Call the shuffle function on page load
+shuffleCards();
 //Check for Match Function
 
 //Remove Pair Function
