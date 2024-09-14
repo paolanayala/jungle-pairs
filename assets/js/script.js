@@ -12,7 +12,8 @@ const startButton = document.getElementById('startButton');
 const restartButton = document.getElementById('restartButton');
 //DATA ------------------------------------------------------------------------------------------>
 console.log(cards)
-
+const fastestTimeKey = 'fastestTime'; // Key to store fastest time in localStorage
+let fastestTime = localStorage.getItem(fastestTimeKey);
 
 //User Interaction------------------------------------------------------------------------------->
 flashcards.forEach(card => card.addEventListener('click', flipCard));
@@ -62,6 +63,14 @@ function checkForMatch() {
             //displayMessage('Congratulations! You won!'); //Display win message
             clearInterval(gameRunTime); // Stop the timer
             displayMessage(`Congratulations! You won! <br> Time Taken: ${60 - timeLeft} seconds`);
+            if (!fastestTime || timeTaken < fastestTime) {
+                fastestTime = timeTaken;
+                localStorage.setItem(fastestTimeKey, fastestTime);
+            }
+
+            displayMessage(`Congratulations! You won! <br> Time Taken: ${timeTaken} seconds<br>Fastest Time: ${fastestTime} seconds`);
+
+            
         }
 
     } else {
