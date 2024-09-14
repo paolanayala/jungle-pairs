@@ -7,7 +7,7 @@ let matchedPairs = 0; //Declare matchedPairs at the top level
 let timeLeft = 60;
 const timerElement = document.getElementById('time');
 let gameRunTime;
-
+let gameStarted = false; // Flag to check if the game has started
 const startButton = document.getElementById('startButton');
 const restartButton = document.getElementById('restartButton');
 //DATA ------------------------------------------------------------------------------------------>
@@ -16,8 +16,9 @@ const fastestTimeKey = 'fastestTime'; // Key to store fastest time in localStora
 let fastestTime = localStorage.getItem(fastestTimeKey);
 
 //User Interaction------------------------------------------------------------------------------->
-flashcards.forEach(card => card.addEventListener('click', flipCard));
-
+flashcards.forEach(card => card.addEventListener('click', () => {
+    if (gameStarted) flipCard.call(card);
+}));
 
 //Functions--------------------------------------------------------------------------------------->
 function shuffleCards() {
@@ -146,6 +147,7 @@ function startTimer() {
     }, 1000);
 }
 function startGame() {
+    gameStarted = true; // Allow the cards to be flipped
     shuffleCards();
     startTimer();
     startButton.style.display = 'none';
@@ -154,7 +156,8 @@ function startGame() {
 }
 
 // Restart Function
-function restart() {
+function restartGame() {
+    gameStarted = false; // Prevent the cards from being flipped until the game starts
     flashcards.forEach(card => {
         card.classList.remove('flipped', 'hidden');
         if (!card.parentElement) {
