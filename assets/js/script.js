@@ -63,13 +63,14 @@ function checkForMatch() {
         if  (matchedPairs === flashcards.length / 2) {
             //displayMessage('Congratulations! You won!'); //Display win message
             clearInterval(gameRunTime); // Stop the timer
-            displayMessage(`Congratulations! You won! <br> Time Taken: ${60 - timeLeft} seconds`);
+            const timeTaken = 60 - timeLeft; // Calculate time taken for the game
+
             if (!fastestTime || timeTaken < fastestTime) {
                 fastestTime = timeTaken;
                 localStorage.setItem(fastestTimeKey, fastestTime);
             }
 
-            displayMessage(`Congratulations! You won! <br> Time Taken: ${timeTaken} seconds<br>Fastest Time: ${fastestTime} seconds`);
+            displayMessage(`Congratulations! You won!\nTime Taken: ${timeTaken} seconds<b\nFastest Time: ${fastestTime} seconds`);
 
             
         }
@@ -142,7 +143,7 @@ function startTimer() {
             timerElement.textContent = timeLeft;
         } else {
             clearInterval(gameRunTime);
-            displayMessage('Out of time! Game Over');
+            displayMessage(`Out of time! Game Over\nFastest Time: ${fastestTime ? fastestTime + ' seconds' : 'No fastest time yet'}`);
         }
     }, 1000);
 }
