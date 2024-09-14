@@ -220,8 +220,8 @@ margin: -0.4vh 2vh 0;
 .download a {
 background-color: #fff;
 height: 8.2vh;
-border: #a6a6a6b8 solid 0.2vh; 
-border-radius: 1.8vh;
+border: #a6a6a6b8 solid 0.4vh; 
+border-radius: 0.8vh;
 }
 .download img {
     width: auto;
