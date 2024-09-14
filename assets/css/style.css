@@ -184,6 +184,25 @@ p {
     cursor: pointer;
 }
 
-.facebook {
-    
+div.bottomLinks {
+width: 100vw;
+height: 100vh;
+display: flex;
+align-items: center;
+flex-direction: column;
+font-family: Arial, Helvetica, sans-serif;
+position: relative;
+}
+
+span.download {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 4vh;
+
+}
+span em {
+    font-size: 3vh;
+    text-transform: uppercase;
+    font-style: normal;
 }
