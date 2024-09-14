@@ -3,20 +3,19 @@ const flashcards = document.querySelectorAll(".flashcard");
 // let cards = [];
 let firstCard, secondCard;
 let lockBoard = false;
-let Time = 0;
 let matchedPairs = 0; //Declare matchedPairs at the top level
 let timeLeft = 60;
 const timerElement = document.getElementById('time');
 let gameRunTime;
 
-
+const startButton = document.getElementById('startButton');
+const restartButton = document.getElementById('restartButton');
 //DATA ------------------------------------------------------------------------------------------>
 console.log(cards)
 
 
 //User Interaction------------------------------------------------------------------------------->
 flashcards.forEach(card => card.addEventListener('click', flipCard));
-
 
 
 //Functions--------------------------------------------------------------------------------------->
@@ -50,8 +49,7 @@ function checkForMatch() {
         const firstCardBack = firstCard.dataset.animal
         const secondCardBack = secondCard.dataset.animal
     let isMatch = firstCardBack === secondCardBack;
-    //console.log(firstCardBack);
-    //console.log(secondCardBack);
+
     console.log("Checking for match:");
     console.log("First card:", firstCardBack);
     console.log("Second card:", secondCardBack);
@@ -97,45 +95,6 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
     lockBoard = false;
 }
-
-// Function to display a message
-function displayMessage(message) {
-    setTimeout(() => {
-        alert(message); // Use alert or replace with a custom modal/dialog if needed
-    }, 100); // Slight delay to ensure it shows after other actions
-}
-
-// Timer Function
-function startTimer() {
-    gameRunTime = setInterval(() => {
-        if (timeLeft > 0) {
-            timeLeft--;
-            timerElement.textContent = timeLeft;
-        } else {
-            clearInterval(gameRunTime);
-            displayMessage('Out of time! Game Over');
-        }
-    }, 1000);
-}
-
-// Restart Function
-function restart() {
-    flashcards.forEach(card => {
-        card.classList.remove('flipped', 'hidden');
-        if (!card.parentElement) {
-            document.querySelector('.create-box').appendChild(card);
-        }
-    });
-
-    matchedPairs = 0; // Reset matched pairs
-    shuffleCards();
-    timeLeft = 60; // Reset the timer back to 60 seconds
-    timerElement.textContent = timeLeft;
-    clearInterval(gameRunTime); // Clear any existing interval
-    startTimer(); 
-    console.log("Games restarted");// Restart the timer
-}
-
 // Function to display a message with "Play Again" button
 function displayMessage(message) {
     const messageContainer = document.createElement('div');
@@ -159,7 +118,69 @@ function displayMessage(message) {
     console.log("Message displayed:", message);
 }
 
+function displayMessage(message) {
+    setTimeout(() => {
+        alert(message); // Use alert or replace with a custom modal/dialog if needed
+    }, 100); // Slight delay to ensure it shows after other actions
+}
+
+// Timer Function
+function startTimer() {
+    gameRunTime = setInterval(() => {
+        if (timeLeft > 0) {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+        } else {
+            clearInterval(gameRunTime);
+            displayMessage('Out of time! Game Over');
+        }
+    }, 1000);
+}
+function startGame() {
+    shuffleCards();
+    startTimer();
+    startButton.style.display = 'none';
+    restartButton.style.display = 'block';
+    console.log("Game started");
+}
+
+// Restart Function
+function restart() {
+    flashcards.forEach(card => {
+        card.classList.remove('flipped', 'hidden');
+        if (!card.parentElement) {
+            document.querySelector('.create-box').appendChild(card);
+        }
+    });
+
+    matchedPairs = 0; // Reset matched pairs
+    shuffleCards();
+    timeLeft = 60; // Reset the timer back to 60 seconds
+    startTimer(); 
+    startButton.style.display = 'none';
+    restartButton.style.display = 'block';
+console.log("Game started");
+}
+
+// Restart function
+function restartGame() {
+    flashcards.forEach(card => {
+        card.classList.remove('flipped', 'hidden');
+        if (!card.parentElement) {
+            document.querySelector('.create-box').appendChild(card);
+        }
+    });
+
+    matchedPairs = 0; // Reset matched pairs
+    timeLeft = 60; // Reset the timer back to 60 seconds
+    timerElement.textContent = timeLeft;
+    clearInterval(gameRunTime); // Clear any existing interval
+    startGame(); // Restart the game
+    console.log("Game restarted");
+}
+
 //Initialization-------------------------------------------------------------------------------->
 // Call the shuffle function on page load 
 shuffleCards();
-startTimer();
+startButton.addEventListener('click', startGame);
+restartButton.addEventListener('click', restartGame);
