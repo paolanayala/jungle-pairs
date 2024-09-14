@@ -206,3 +206,9 @@ span em {
     text-transform: uppercase;
     font-style: normal;
 }
+.line {
+display: block;
+width: 4vh;
+border-top: 1px solid #fff;
+margin: -0.4vh 2vh 0;
+}
