@@ -223,3 +223,7 @@ height: 8.2vh;
 border: #a6a6a6b8 solid 0.2vh; 
 border-radius: 0.8vh;
 }
+.download img {
+    width: auto;
+    height: 100%;
+}
