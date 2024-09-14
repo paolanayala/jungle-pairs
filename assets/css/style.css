@@ -218,10 +218,10 @@ margin: -0.4vh 2vh 0;
     gap: 2vh;
 }
 .download a {
-    background-color: #fff;
+background-color: #fff;
 height: 8.2vh;
 border: #a6a6a6b8 solid 0.2vh; 
-border-radius: 0.8vh;
+border-radius: 1.8vh;
 }
 .download img {
     width: auto;
