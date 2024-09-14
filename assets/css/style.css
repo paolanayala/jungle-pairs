@@ -212,3 +212,8 @@ width: 4vh;
 border-top: 1px solid #fff;
 margin: -0.4vh 2vh 0;
 }
+.download {
+    margin-top: 2vh;
+    display: flex;
+    gap: 2vh;
+}
