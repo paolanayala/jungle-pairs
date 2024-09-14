@@ -70,7 +70,7 @@ function checkForMatch() {
                 localStorage.setItem(fastestTimeKey, fastestTime);
             }
 
-            displayMessage(`Congratulations! You won!\nTime Taken: ${timeTaken} seconds<b\nFastest Time: ${fastestTime} seconds`);
+            displayMessage(`Congratulations! You won!\nTime Taken: ${timeTaken} seconds\nFastest Time: ${fastestTime} seconds`);
 
             
         }

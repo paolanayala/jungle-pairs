@@ -183,3 +183,63 @@ p {
     font-size: 16px;
     cursor: pointer;
 }
+
+div.bottomLinks {
+width: 100vw;
+height: 100vh;
+display: flex;
+align-items: center;
+flex-direction: column;
+font-family: Arial, Helvetica, sans-serif;
+position: relative;
+}
+
+span.download {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 4vh;
+
+}
+span em {
+    font-size: 3vh;
+    text-transform: uppercase;
+    font-style: normal;
+}
+.line {
+display: block;
+width: 4vh;
+border-top: 1px solid #fff;
+margin: -0.4vh 2vh 0;
+}
+.download {
+    margin-top: 2vh;
+    display: flex;
+    gap: 2vh;
+}
+.download a {
+    background-color: #fff;
+height: 8.2vh;
+border: #a6a6a6b8 solid 0.2vh; 
+border-radius: 0.8vh;
+}
+.download img {
+    width: auto;
+    height: 100%;
+}
+.social {
+    display: flex;
+    gap: 2vh;
+    font-size: 2.5vh;
+    margin-top: 4vh;
+}
+
+.social a {
+    width: 36px;
+    height: 36px;
+
+    background-color: #27ae60;
+    color: white;
+    border-radius: 50%;
+    
+}
