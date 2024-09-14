@@ -233,3 +233,13 @@ border-radius: 0.8vh;
     font-size: 2.5vh;
     margin-top: 4vh;
 }
+
+.social a {
+    width: 36px;
+    height: 36px;
+
+    background-color: #27ae60;
+    color: white;
+    border-radius: 50%;
+    
+}
