@@ -159,7 +159,7 @@ function displayMessage(message) {
     console.log("Message displayed:", message);
 }
 
-//Initialization-------------------------------------------------------------------->
+//Initialization-------------------------------------------------------------------------------->
 // Call the shuffle function on page load 
 shuffleCards();
 startTimer();
