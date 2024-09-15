@@ -75,7 +75,7 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   background-color: teal;
-  color: white;
+  color: rgb(229, 225, 225);
 }
 
 h1 {
