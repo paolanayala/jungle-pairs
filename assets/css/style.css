@@ -258,14 +258,14 @@ border-radius: 0.8vh;
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
 }
 .button-container {
-    position: fixed; /* Fixes the container to the top */
+    position: absolute; /* Fixes the container to the top */
     top: 63px; /* Adjust this value to control the distance from the top */
     left: 51%;
     transform: translateX(-50%); /* Centers the container horizontally */
-    z-index: 1000; /* Ensures the buttons stay above other content */
     display: flex;
     justify-content: center;
     gap: 10px; /* Space between buttons */
+
 }
 
 .button-container button {
@@ -281,7 +281,7 @@ border-radius: 0.8vh;
     }
 
     .button-container button {
-        padding: 8px 16px; /* Slightly smaller padding for smaller screens */
+        padding: 10px 16px; /* Slightly smaller padding for smaller screens */
         font-size: 14px; /* Slightly smaller font size for smaller screens */
     }
 }
