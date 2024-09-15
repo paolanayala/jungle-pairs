@@ -52,15 +52,6 @@ main div.create-box {
     position: relative;
     transform-style: preserve-3d;
 }
-
-/*.flashcard:hover .flashcard-front {
-    transform: rotateY(180deg);
-}*/
-
-/*.flashcard:hover .flashcard-back {
-    transform: rotateY(0deg);
-}*/
-
 /* Back side of the flashcard */
 .flashcard-back {
     transform: rotateY(180deg);
@@ -265,4 +256,32 @@ border-radius: 0.8vh;
 
 .btn-success {
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
+.button-container {
+    position: fixed; /* Fixes the container to the top */
+    top: 63px; /* Adjust this value to control the distance from the top */
+    left: 51%;
+    transform: translateX(-50%); /* Centers the container horizontally */
+    z-index: 1000; /* Ensures the buttons stay above other content */
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+}
+
+.button-container button {
+    padding: 10px 20px; /* Adjust size to make buttons bigger */
+    font-size: 16px; /* Adjust font size for larger buttons */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds an outer glow effect */
+}
+
+@media (max-width: 599px) {
+    .button-container {
+        top: 5px; /* Adjust position for smaller screens */
+    }
+
+    .button-container button {
+        padding: 8px 16px; /* Slightly smaller padding for smaller screens */
+        font-size: 14px; /* Slightly smaller font size for smaller screens */
+    }
 }
