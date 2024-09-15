@@ -180,13 +180,19 @@ function displayMessage(message) {
     console.log("Message displayed:", message);
 }
 
-//Initialization-------------------------------------------------------------------------------->
-// Initialize the game with shuffle but don't allow interaction until start button is clicked
-shuffleCards();
-startButton.disabled = true; // Disable the start button initially
-restartButton.style.display = 'none'; // Hide the restart button initially
 window.onload = function() {
     
     alert("Welcome to Jungle Pairs! Please select a difficulty and press the start button when you're ready to play. Good luck!");
         return;
 };
+
+//Initialization-------------------------------------------------------------------------------->
+// Initialize the game with shuffle but don't allow interaction until start button is clicked
+shuffleCards();
+startButton.disabled = true; // Disable the start button initially
+restartButton.style.display = 'none'; // Hide the restart button initially
+// window.onload = function() {
+    
+//     alert("Welcome to Jungle Pairs! Please select a difficulty and press the start button when you're ready to play. Good luck!");
+//         return;
+// };
