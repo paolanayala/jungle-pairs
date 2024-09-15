@@ -100,7 +100,7 @@ p {
     font-size: 30px;
     border-radius: 10px;
     background-color: #27ae60;
-    color: white;
+    color: rgb(233, 229, 229);
 }
 
 .flashcard-front  {
