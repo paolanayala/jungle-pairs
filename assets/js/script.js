@@ -185,3 +185,8 @@ function displayMessage(message) {
 shuffleCards();
 startButton.disabled = true; // Disable the start button initially
 restartButton.style.display = 'none'; // Hide the restart button initially
+window.onload = function() {
+    
+    alert("Welcome to Jungle Pairs! Please select a difficulty and press the start button when you're ready to play. Good luck!");
+        return;
+};
