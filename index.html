@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Jungle Pairs</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<div class="button-container">
+    <button type="button" class="btn btn-danger">HARD</button>
+    <button type="button" class="btn btn-warning">MEDIUM</button>
+    <button type="button" class="btn btn-success">EASY</button>
+</div>
+
 <header>
     <h1 class="header">Jungle Pairs</h1>     
 </header>
@@ -16,88 +22,86 @@
     <div class="animal-grid">
         <!-- Flashcard for each animal -->
        <div class="create-box">
-        <div class="flashcard">
+        <div class="flashcard" data-animal="lion">
             <div class="flashcard-front"></div>
-            <div class="flashcard-back"><img src="./assets/images/brown-bear.avif" alt="brown bear"></div>
+            <div class="flashcard-back"><img src="./assets/images/lion.avif" alt="lion"></div>
         </div>
-        <div class="flashcard">
+        <div class="flashcard" data-animal="brown-bear">
             <div class="flashcard-front"></div>
-            <div class="flashcard-back"><img src="./assets/images/Cat.avif" alt="cat"></div>
+            <div class="flashcard-back"><img src="assets/images/brown-bear.avif" alt="brown-bear"></div>
         </div>
-        <div class="flashcard">
+        <div class="flashcard" data-animal="dog">
             <div class="flashcard-front"></div>
             <div class="flashcard-back"><img src="./assets/images/Dog.avif" alt="dog"></div>
         </div>
-        <div class="flashcard">
+        <div class="flashcard" data-animal="cat">
             <div class="flashcard-front"></div>
-            <div class="flashcard-back">Meow</div>
+            <div class="flashcard-back"><img src="./assets/images/Cat.avif" alt="cat"></div>
         </div>
-        <div class="flashcard">
+        <div class="flashcard" data-animal="parrot">
             <div class="flashcard-front"></div>
-            <div class="flashcard-back">Quack</div>
+            <div class="flashcard-back"><img src="./assets/images/parrot.avif" alt="parrot"></div>
         </div>
-        <div class="flashcard">
+        <div class="flashcard" data-animal="wolf">
             <div class="flashcard-front"></div>
-            <div class="flashcard-back">Baa</div>
+            <div class="flashcard-back"><img src="./assets/images/Wolf.avif" alt="wolf"></div>
         </div>
-        <div class="flashcard">
+        <div class="flashcard" data-animal="zebra">
             <div class="flashcard-front"></div>
-            <div class="flashcard-back">Neigh</div>
+            <div class="flashcard-back"><img src="./assets/images/Zebra-unsplash.jpg" alt="zebra"></div>
         </div>
-        <div class="flashcard">
+        <div class="flashcard" data-animal="hippo">
             <div class="flashcard-front"></div>
-            <div class="flashcard-back">Oink</div>
+            <div class="flashcard-back"><img src="./assets/images/Hippo.avif" alt="elephant"></div>
         </div>
-        <div class="flashcard">
+        <div class="flashcard" data-animal="elephant">
             <div class="flashcard-front"></div>
             <div class="flashcard-back"><img src="./assets/images/Elephant-unsplash.jpg" alt="dog"></div>
         </div>
-        <div class="flashcard">
+        <div class="flashcard" data-animal="hyena">
             <div class="flashcard-front"></div>
-            <div class="flashcard-back">Ribbit</div>
+            <div class="flashcard-back"><img src="./assets/images/Hyena.avif" alt="hyena"></div>
         </div>
-        <div class="create-box">
-            <div class="flashcard">
+            <div class="flashcard" data-animal="lion">
                 <div class="flashcard-front"></div>
-                <div class="flashcard-back">Roar</div>
+                <div class="flashcard-back"><img src="./assets/images/lion.avif" alt="lion"></div>
             </div>
-            <div class="flashcard">
+            <div class="flashcard" data-animal="brown-bear">
                 <div class="flashcard-front"></div>
-                <div class="flashcard-back">Moo</div>
+                <div class="flashcard-back"><img src="assets/images/brown-bear.avif" alt="brown-bear"></div>
             </div>
-            <div class="flashcard">
+            <div class="flashcard" data-animal="dog">
                 <div class="flashcard-front"></div>
                 <div class="flashcard-back"><img src="./assets/images/Dog.avif" alt="dog"></div>
             </div>
-            <div class="flashcard">
+            <div class="flashcard" data-animal="cat">
                 <div class="flashcard-front"></div>
-                <div class="flashcard-back">Meow</div>
+                <div class="flashcard-back"><img src="./assets/images/Cat.avif" alt="cat"></div>
             </div>
-            <div class="flashcard">
+            <div class="flashcard" data-animal="parrot">
                 <div class="flashcard-front"></div>
-                <div class="flashcard-back">Quack</div>
+                <div class="flashcard-back"><img src="./assets/images/parrot.avif" alt="parrot"></div>
             </div>
-            <div class="flashcard">
+            <div class="flashcard" data-animal="wolf">
                 <div class="flashcard-front"></div>
-                <div class="flashcard-back">Baa</div>
+                <div class="flashcard-back"><img src="./assets/images/Wolf.avif" alt="wolf"></div>
             </div>
-            <div class="flashcard">
+            <div class="flashcard" data-animal="zebra">
                 <div class="flashcard-front"></div>
-                <div class="flashcard-back">Neigh</div>
+                <div class="flashcard-back"><img src="./assets/images/Zebra-unsplash.jpg" alt="zebra"></div>
             </div>
-            <div class="flashcard">
+            <div class="flashcard" data-animal="hippo">
                 <div class="flashcard-front"></div>
-                <div class="flashcard-back">Oink</div>
+                <div class="flashcard-back"><img src="./assets/images/Hippo.avif" alt="hippo"></div>
             </div>
-            <div class="flashcard">
+            <div class="flashcard" data-animal="elephant">
                 <div class="flashcard-front"></div>
-                <div class="flashcard-back"><img src="./assets/images/Elephant-unsplash.jpg" alt="dog"></div>
+                <div class="flashcard-back"><img src="./assets/images/Elephant-unsplash.jpg" alt="elephant"></div>
             </div>
-            <div class="flashcard">
+            <div class="flashcard" data-animal="hyena">
                 <div class="flashcard-front"></div>
-                <div class="flashcard-back">Ribbit</div>
+                <div class="flashcard-back"><img src="./assets/images/Hyena.avif" alt="hyena"></div>
             </div>
-        </div>
     </div>
 </main>
 
@@ -109,12 +113,35 @@
         </div>
         <br>
         <div class="actions">
-            <button onclick="restart()">Restart</button>
+            <button id="startButton">Start</button>
+            <button id="restartButton" style="display:none;">Restart</button>
         </div>
     </section>
     <br>
+   
     <script src="assets/data/cards.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
+<footer>
+    <div class="bottomLinks">
+    <span class="download">
+        <p class="line"></p>
+        <em>Download</em>
+        <p class="line"></p>
+    </span>
+    
+    <div class="download">
+        <a id="google.play.link" href="#"><img src="./assets/images/IMG_4423.jpg"></a>
+        <a id="app.store.link" href="#"><img src="./assets/images/IMG_4424.jpg"></a>
+    </div>
+    <div class="social">
+        <a id="facebook.link" href="#"><img src="./assets/images/facebook.png" style="height: 36px;"></a>
+        <a id="instagram.link" href="#"><img src="./assets/images/instagram.png" style="height: 36px;" ></a>
+        <a id="github.link" href="#"><img src="./assets/images/github.png" style="height: 26px;
+    padding-top: 5px;
+    padding-left: 2px;"></a>
+    </div>
+    </div>
+</footer>
 </html>

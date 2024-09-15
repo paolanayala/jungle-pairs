@@ -1,49 +1,45 @@
- 
- 
- // Create buttons for each animal
- //String[] animals = {"brown bear", "cat", "dog", "elepahnt", "hippo", "hyena" ,"lion", "parrot", "wolf", "zebfra"};
-//  String[] soundFiles = {"brown bear.wav", "cat.wav", "dog.wav", "elephant.wav", "hippo.wav", "hyena.wav", "lion", "parrot", "wolf", "zebra"};
- 
-//  function playSound(soundFile) {
-//     // Create a new Audio object
-//     const audio = new Audio(`sounds/${soundFile}.mp3`);
-//     audio.play(); // Play the sound
-
-//DEPENDENCIES
+//DEPENDENCIES -------------------------------------------------------------------------------->
 const flashcards = document.querySelectorAll(".flashcard");
-// let cards = [];
 let firstCard, secondCard;
 let lockBoard = false;
-let Time = 0;
+let matchedPairs = 0; //Declare matchedPairs at the top level
+let timeLeft;
+let gameRunTime;
+let gameStarted = false; // Flag to check if the game has started
 
-//DATA - Get Data From Json
-console.log(cards)
-    shuffleCards();
-    // generateCards();
+const timerElement = document.getElementById('time');
+const startButton = document.getElementById('startButton');
+const restartButton = document.getElementById('restartButton');
 
-//Shuffle Card Function
-function shuffleCards() {
-let currentIndex = cards.length,
-    randomIndex,
-    temporaryValue;
-while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    temporaryValue = cards[currentIndex];
-    cards[currentIndex] = cards[randomIndex];
-    cards[randomIndex] = temporaryValue;
- }
+//DATA ------------------------------------------------------------------------------------------>
+const fastestTimeKey = 'fastestTime'; // Key to store fastest time in localStorage
+let fastestTime = localStorage.getItem(fastestTimeKey);
+
+//User Interaction------------------------------------------------------------------------------->
+flashcards.forEach(card => card.addEventListener('click', flipCard));
+startButton.addEventListener('click', startGame);
+restartButton.addEventListener('click', restartGame);
+document.querySelector('.btn-danger').addEventListener('click', () => setDifficulty(30));
+document.querySelector('.btn-warning').addEventListener('click', () => setDifficulty(40));
+document.querySelector('.btn-success').addEventListener('click', () => setDifficulty(60));
+
+//Functions--------------------------------------------------------------------------------------->
+function setDifficulty(seconds) {
+    timeLeft = seconds;
+    timerElement.textContent = timeLeft;
+    startButton.disabled = false; // Enable the start button after selecting a difficulty
+    console.log(`Difficulty set to ${seconds} seconds`);
 }
 
-//Generate Card Function
-
-//Flip Card Functio// Select all flashcards----------------------> Kol input
-
-// Add event listeners to all flashcards
-flashcards.forEach(card => card.addEventListener('click', flipCard));
+function shuffleCards() {
+    const createBox = document.querySelector('.create-box');
+    for (let i = createBox.children.length; i >= 0; i--) {
+        createBox.appendChild(createBox.children[Math.random() * i | 0]);
+    }
+}
 
 function flipCard() {
-    if (lockBoard) return; // Prevent clicking if the board is locked
+    if (!gameStarted || lockBoard) return; // Prevent clicking if the game is not started or the board is locked
     if (this === firstCard) return; // Prevent double-clicking the same card
 
     this.classList.add('flipped');
@@ -62,40 +58,57 @@ function flipCard() {
 }
 
 function checkForMatch() {
-    let isMatch = firstCard.querySelector('.flashcard-back').textContent === secondCard.querySelector('.flashcard-back').textContent;
+    const firstCardBack = firstCard.dataset.animal;
+    const secondCardBack = secondCard.dataset.animal;
+    let isMatch = firstCardBack === secondCardBack;
+    console.log("Checking for match:");
+    console.log("First card:", firstCardBack);
+    console.log("Second card:", secondCardBack);
+    console.log("Match found:", isMatch);
 
     if (isMatch) {
-        removePair(); // If it's a match, remove the cards
+        matchedPairs++; // If it's a match, hide the cards
+        hidePair();
+        if (matchedPairs === flashcards.length / 2) {
+            clearInterval(gameRunTime); // Stop the timer
+            const timeTaken = timeLeft; // Time remaining when the game is won
+
+            if (!fastestTime || timeTaken > fastestTime) {
+                fastestTime = timeTaken;
+                localStorage.setItem(fastestTimeKey, fastestTime);
+            }
+
+            displayMessage(`Congratulations! You won! Time Taken: ${60 - timeLeft} seconds\nFastest Time: ${60 - fastestTime} seconds`);
+        }
+
     } else {
         unflipCards(); // If they don't match, unflip the cards
     }
 }
 
-function removePair() {
+// Funtion to hide matched pairs
+function hidePair() {
     setTimeout(() => {
-        // Optionally add an animation before removal
-        firstCard.classList.add('removed');
-        secondCard.classList.add('removed');
-
-        // Actually remove the cards from the DOM
-        setTimeout(() => {
-            firstCard.remove();
-            secondCard.remove();
-            resetBoard();
-        }, 500); // Adjust delay as needed for a smoother removal animation
-    }, 500); // Adjust delay if you want to show the cards for a brief moment before removal
+        // Add a 'hidden' class to hide the matched cards
+        firstCard.classList.add('hidden');
+        secondCard.classList.add('hidden');
+        resetBoard();
+        console.log("Pair hidden");
+    }, 500); // Adjust delay if needed to show the cards briefly before hiding them
 }
 
+// Function to unflip non-matching cards
 function unflipCards() {
     setTimeout(() => {
         firstCard.classList.remove('flipped');
         secondCard.classList.remove('flipped');
         resetBoard();
+        console.log("Cards unflipped");
     }, 1000); // Adjust the delay to control how long the cards stay visible before flipping back
 }
 
+// Function to reset the board state
 function resetBoard() {
-    // Reset the board state
     [firstCard, secondCard] = [null, null];
     lockBoard = false;
 }
@@ -115,11 +128,6 @@ shuffleCards();
 //Check for Match Function
 
 //Remove Pair Function
-function matchCards (img1, img2) {
-    if (img1 === img2) {
-        return console.log('card matched');
-    }
-}
 
 //Unflip Card Function
 

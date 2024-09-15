@@ -5,11 +5,12 @@ body, h1, p {
     box-sizing: border-box;
 }
 main div.create-box {
-  display: flex;
-  flex-wrap: wrap;
-justify-content: center;
+    display: grid;
+    justify-content: center;
+    grid-gap: 16px;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(2, calc(100px / 2 * 3));
 }
-
 /* Container for flashcards */
 .flashcards-container {
     display: flex;
@@ -51,15 +52,6 @@ justify-content: center;
     position: relative;
     transform-style: preserve-3d;
 }
-
-/*.flashcard:hover .flashcard-front {
-    transform: rotateY(180deg);
-}*/
-
-/*.flashcard:hover .flashcard-back {
-    transform: rotateY(0deg);
-}*/
-
 /* Back side of the flashcard */
 .flashcard-back {
     transform: rotateY(180deg);
@@ -82,7 +74,7 @@ header {
 body {
   min-height: 100vh;
   min-width: 100vw;
-  background-color: #52e4a4;
+  background-color: teal;
   color: white;
 }
 
@@ -147,8 +139,149 @@ p {
     transform: rotateY(180deg);
 }
 
-.flashcard.removed {
+.hidden {
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+.message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.message-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.message-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.message-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+div.bottomLinks {
+width: 100vw;
+height: 100vh;
+display: flex;
+align-items: center;
+flex-direction: column;
+font-family: Arial, Helvetica, sans-serif;
+position: relative;
+}
+
+span.download {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 4vh;
+
+}
+span em {
+    font-size: 3vh;
+    text-transform: uppercase;
+    font-style: normal;
+}
+.line {
+display: block;
+width: 4vh;
+border-top: 1px solid #fff;
+margin: -0.4vh 2vh 0;
+}
+.download {
+    margin-top: 2vh;
+    display: flex;
+    gap: 2vh;
+}
+.download a {
+background-color: #fff;
+height: 8.2vh;
+border: #a6a6a6b8 solid 0.4vh; 
+border-radius: 0.8vh;
+}
+.download img {
+    width: auto;
+    height: 100%;
+}
+.social {
+    display: flex;
+    gap: 2vh;
+    font-size: 2.5vh;
+    margin-top: 4vh;
+}
+
+.social a {
+    width: 36px;
+    height: 36px;
+
+    background-color: #27ae60;
+    color: white;
+    border-radius: 50%;
+    
+}
+.btn-glow {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 15px 30px; /* Increase padding for larger buttons */
+    font-size: 1.5rem; /* Increase font size for larger text */
+    border-radius: 8px; /* Optional: Add some border-radius for rounded corners */
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+.btn-danger {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.btn-warning {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+}
+
+.btn-success {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
+.button-container {
+    position: absolute; /* Fixes the container to the top */
+    top: 63px; /* Adjust this value to control the distance from the top */
+    left: 51%;
+    transform: translateX(-50%); /* Centers the container horizontally */
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+
+}
+
+.button-container button {
+    padding: 10px 20px; /* Adjust size to make buttons bigger */
+    font-size: 16px; /* Adjust font size for larger buttons */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds an outer glow effect */
+}
+
+@media (max-width: 599px) {
+    .button-container {
+        top: 5px; /* Adjust position for smaller screens */
+    }
+
+    .button-container button {
+        padding: 10px 16px; /* Slightly smaller padding for smaller screens */
+        font-size: 14px; /* Slightly smaller font size for smaller screens */
+    }
 }
