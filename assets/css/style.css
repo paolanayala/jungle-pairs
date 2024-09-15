@@ -243,3 +243,26 @@ border-radius: 0.8vh;
     border-radius: 50%;
     
 }
+.btn-glow {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 15px 30px; /* Increase padding for larger buttons */
+    font-size: 1.5rem; /* Increase font size for larger text */
+    border-radius: 8px; /* Optional: Add some border-radius for rounded corners */
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+.btn-danger {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.btn-warning {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+}
+
+.btn-success {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
