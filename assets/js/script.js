@@ -141,6 +141,7 @@ function startGame() {
 
 // Restart Function
 function restartGame() {
+    clearInterval(gameRunTime); //Clear the timer********************
     gameStarted = false; // Prevent the cards from being flipped until the game starts
     flashcards.forEach(card => {
         card.classList.remove('flipped', 'hidden');
@@ -150,11 +151,10 @@ function restartGame() {
     });
 
     matchedPairs = 0; // Reset matched pairs
-    shuffleCards();
     timerElement.textContent = timeLeft; // Reset the timer display
-    clearInterval(gameRunTime); // Clear any existing interval
-    startGame(); // Restart the game
-    console.log("Game restarted");
+    startButton.style.display = 'block';
+    restartButton.style.display = 'none';
+    console.log("Game reset, waiting for start button press.");
 }
 
 // Function to display a message with "Play Again" button
