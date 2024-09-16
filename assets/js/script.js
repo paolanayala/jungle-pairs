@@ -176,9 +176,11 @@ function restartGame() {
         }
     });
  // Reset the timer to the initially selected difficulty level time
- timeLeft = selectedTime; // Reset timeLeft to the original selected time
- timerElement.textContent = timeLeft; // Update the displayed time
+    timeLeft = selectedTime; // Reset timeLeft to the original selected time
+    timerElement.textContent = timeLeft; // Update the displayed time
+
     matchedPairs = 0; // Reset matched pairs
+
     shuffleCards();
     timerElement.textContent = timeLeft; // Reset the timer display
     clearInterval(gameRunTime); // Clear any existing interval
