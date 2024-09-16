@@ -38,6 +38,9 @@ img.alt = card.name;
 //append the image & add to the flash
 flashcardDiv.appendChild(img);
 flashcardDiv.appendChild(name);
+
+//append flashcard div to the container
+flashcardContainer.appendChild(flashcardDiv);
 });
 
 function setDifficulty(seconds) {
