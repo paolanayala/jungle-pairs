@@ -40,7 +40,7 @@ flashcardDiv.appendChild(img);
 flashcardDiv.appendChild(name);
 
 //append flashcard div to the container
-flashcardContainer.appendChild(flashcardDiv);
+flashcardContainer.appendChild(flashcardDiv); 
 });
 
 function setDifficulty(seconds) {
