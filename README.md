@@ -35,7 +35,7 @@ Play Again Option: Easily restart the game with a click of a button after comple
 
 
 Link to Deployment Application
-git@github.com:paolanayala/jungle-pairs.git
+https://paolanayala.github.io/jungle-pairs/
 
 Future Enhancements: 
 1. Multiplayer Mode: Introduce a mode where players can compete or collaborate with friends in real-time to match animals.
