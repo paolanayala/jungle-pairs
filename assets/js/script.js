@@ -31,6 +31,10 @@ cards.forEach(card => {
 //new div for generating a flashcard 
 const flashcardDiv = document.createElement('div');
 flashcardDiv.classList.add('flashcard');
+//create an image element
+const img = document.createElement('img');
+img.src = card.image;
+img.alt = card.name;
 });
 
 function setDifficulty(seconds) {
