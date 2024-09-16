@@ -20,9 +20,13 @@ Git & Github: Version control and project hosting.
 #Features:
 Three Difficulty Levels: (60 seconds), Medium (40 seconds), and Hard (30 seconds) to cater to different skill levels. 
 
-Memory Matching: Flip cards to find matching pairs of jungle animals. Responsive Design: Adaptable to different screen sizes and devices.
+Memory Matching: Flip cards to find matching pairs of jungle animals. 
 
-Time Tracking: Tracks and displays the time taken to complete the game. Fastest Time Record: Saves the fastest completion time in the browser's LocalStorage.
+Responsive Design: Adaptable to different screen sizes and devices.
+
+Time Tracking: Tracks and displays the time taken to complete the game. 
+
+Fastest Time Record: Saves the fastest completion time in the browser's LocalStorage.
 
 Play Again Option: Easily restart the game with a click of a button after completing or failing the game.
 
@@ -34,11 +38,15 @@ Link to Deployment Application
 git@github.com:paolanayala/jungle-pairs.git
 
 Future Enhancements: 
-1. Multiplayer Mode: Introduce a mode where players can compete or collaborate with friends in real-time to match animals and sounds.
+1. Multiplayer Mode: Introduce a mode where players can compete or collaborate with friends in real-time to match animals.
 
-2. Daily Challenges: Add daily or weekly challenges with rewards to keep the game fresh and encourage regular play.
+2. Audio Feature: Include a sound component that plays an animal sound that corresponds to the animal pair that was found.
 
-3. Animal Facts: Provide quick facts about each animal after matching, offering a little extra learning with each game.
+3. Indicators: Include a vibrational component that is triggered when cards flipped do not match when playing on tablet or mobile.
+
+4. Daily Challenges: Add daily or weekly challenges with rewards to keep the game fresh and encourage regular play.
+
+5. Animal Facts: Provide quick facts about each animal after matching, offering a little extra learning with each game.
 
 License:
 
