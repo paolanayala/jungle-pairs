@@ -35,6 +35,9 @@ flashcardDiv.classList.add('flashcard');
 const img = document.createElement('img');
 img.src = card.image;
 img.alt = card.name;
+//append the image & add to the flash
+flashcardDiv.appendChild(img);
+flashcardDiv.appendChild(name);
 });
 
 function setDifficulty(seconds) {
