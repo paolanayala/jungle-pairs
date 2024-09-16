@@ -138,7 +138,7 @@ function startTimer() {
             timerElement.textContent = timeLeft;
         } else {
             clearInterval(gameRunTime);
-            displayMessage(`Out of time! Game Over\nFastest Time: ${fastestTime ? 60 - fastestTime + ' seconds' : 'No fastest time yet'}`);
+            displayMessage(`Out of time! Game Over \nFastest Time: ${fastestTime ? 60 - fastestTime + ' seconds' : 'No fastest time yet'}`);
         }
     }, 1000);
 }
