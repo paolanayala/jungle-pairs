@@ -167,6 +167,7 @@ p {
 .message-content p {
     margin-bottom: 20px;
     font-size: 18px;
+    color: red;
 }
 
 .message-content button {
