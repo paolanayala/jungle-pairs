@@ -6,6 +6,7 @@ let matchedPairs = 0; //Declare matchedPairs at the top level
 let timeLeft;
 let gameRunTime;
 let gameStarted = false; // Flag to check if the game has started
+let selectedTime; // This will store the initial time based on difficulty
 
 const timerElement = document.getElementById('time');
 const startButton = document.getElementById('startButton');
@@ -26,6 +27,14 @@ document.querySelector('.btn-success').addEventListener('click', () => setDiffic
 //Functions--------------------------------------------------------------------------------------->
 function setDifficulty(seconds) {
     timeLeft = seconds;
+    timerElement.textContent = timeLeft;
+    startButton.disabled = false; // Enable the start button after selecting a difficulty
+    console.log(`Difficulty set to ${seconds} seconds`);
+}
+
+function setDifficulty(seconds) {
+    selectedTime = seconds; // Store the selected time in a separate variable
+    timeLeft = selectedTime; // Set timeLeft to selectedTime
     timerElement.textContent = timeLeft;
     startButton.disabled = false; // Enable the start button after selecting a difficulty
     console.log(`Difficulty set to ${seconds} seconds`);
@@ -141,7 +150,7 @@ function startGame() {
 
 // Restart Function
 function restartGame() {
-    clearInterval(gameRunTime); //Clear the timer********************
+    clearInterval(gameRunTime); //Clear the timer interval ********************
     gameStarted = false; // Prevent the cards from being flipped until the game starts
     flashcards.forEach(card => {
         card.classList.remove('flipped', 'hidden');
@@ -149,12 +158,18 @@ function restartGame() {
             document.querySelector('.create-box').appendChild(card);
         }
     });
-
+ // Reset the timer to the initially selected difficulty level time
+ timeLeft = selectedTime; // Reset timeLeft to the original selected time
+ timerElement.textContent = timeLeft; // Update the displayed time
     matchedPairs = 0; // Reset matched pairs
+    shuffleCards();
     timerElement.textContent = timeLeft; // Reset the timer display
-    startButton.style.display = 'block';
-    restartButton.style.display = 'none';
-    console.log("Game reset, waiting for start button press.");
+    clearInterval(gameRunTime); // Clear any existing interval
+    startGame(); // Restart the game
+    console.log("Game restarted");
+     startButton.style.display = 'block';
+     restartButton.style.display = 'none';
+     console.log("Game reset, waiting for start button press.");
 }
 
 // Function to display a message with "Play Again" button
