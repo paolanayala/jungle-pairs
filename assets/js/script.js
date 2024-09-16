@@ -10,6 +10,9 @@ let gameStarted = false; // Flag to check if the game has started
 const timerElement = document.getElementById('time');
 const startButton = document.getElementById('startButton');
 const restartButton = document.getElementById('restartButton');
+//const flashcardContainer = document.getElementById('create-box'); //get flashcard container from the DOM
+
+
 
 //DATA ------------------------------------------------------------------------------------------>
 const fastestTimeKey = 'fastestTime'; // Key to store fastest time in localStorage
@@ -24,6 +27,22 @@ document.querySelector('.btn-warning').addEventListener('click', () => setDiffic
 document.querySelector('.btn-success').addEventListener('click', () => setDifficulty(60));
 
 //Functions--------------------------------------------------------------------------------------->
+cards.forEach(card => {
+//new div for generating a flashcard 
+const flashcardDiv = document.createElement('div');
+flashcardDiv.classList.add('flashcard');
+//create an image element
+const img = document.createElement('img');
+img.src = card.image;
+img.alt = card.name;
+//append the image & add to the flash
+flashcardDiv.appendChild(img);
+flashcardDiv.appendChild(name);
+
+//append flashcard div to the container
+flashcardContainer.appendChild(flashcardDiv);
+});
+
 function setDifficulty(seconds) {
     timeLeft = seconds;
     timerElement.textContent = timeLeft;
