@@ -18,7 +18,7 @@ main div.create-box {
     justify-content: center;
     gap: 20px; /* Space between flashcards */
     padding: 20px;
-    background-color: #baafaf; /* Light background color for the container */
+    background-color: #f5f5f5; /* Light background color for the container */
 }
 
 /* Individual flashcard */
@@ -75,7 +75,7 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   background-color: teal;
-  color: rgb(229, 225, 225);
+  color: white;
 }
 
 h1 {
@@ -100,7 +100,7 @@ p {
     font-size: 30px;
     border-radius: 10px;
     background-color: #27ae60;
-    color: rgb(233, 229, 229);
+    color: white;
 }
 
 .flashcard-front  {
@@ -167,8 +167,7 @@ p {
 .message-content p {
     margin-bottom: 20px;
     font-size: 18px;
-    color:rgba(255, 0, 0, 0.6);
-
+    color: red;
 }
 
 .message-content button {
@@ -179,7 +178,7 @@ p {
 
 div.bottomLinks {
 width: 100vw;
-height: 30vh;
+height: 100vh;
 display: flex;
 align-items: center;
 flex-direction: column;
@@ -278,7 +277,8 @@ border-radius: 0.8vh;
 
 @media (max-width: 599px) {
     .button-container {
-        top: 5px; /* Adjust position for smaller screens */
+        top: 65px; /* Adjust position for smaller screens */
+        flex-direction: row;
     }
 
     .button-container button {
