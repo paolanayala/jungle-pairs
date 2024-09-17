@@ -286,3 +286,27 @@ border-radius: 0.8vh;
         font-size: 14px; /* Slightly smaller font size for smaller screens */
     }
 }
+@media (max-width: 599px) {
+    .flashcard {
+        width: 60px; /* Smaller width for mobile */
+        height: 90px; /* Smaller height for mobile */
+    }
+
+    .flashcard .flashcard-front,
+    .flashcard .flashcard-back {
+        font-size: 1.2em; /* Adjust the font size for mobile */
+    }
+}
+/* Flashcard Container for Mobile Adjustments */
+@media (max-width: 599px) {
+    main div.create-box {
+        grid-template-columns: repeat(4, 80px); /* Adjust the grid to 3 columns on mobile */
+        grid-template-rows: auto; /* Allow rows to auto-fit */
+        grid-gap: 10px; /* Reduce the gap between cards */
+    }
+
+    .flashcard {
+        width: 80px; /* Smaller width for mobile */
+        height: 100px; /* Smaller height for mobile */
+    }
+}
