@@ -211,7 +211,7 @@ margin: -0.4vh 2vh 0;
 }
 .download a {
 background-color: #fff;
-height: 8.2vh;
+height: 6.2vh;
 border: #a6a6a6b8 solid 0.4vh; 
 border-radius: 0.8vh;
 }
@@ -296,6 +296,11 @@ border-radius: 0.8vh;
     .flashcard .flashcard-back {
         font-size: 1.2em; /* Adjust the font size for mobile */
     }
+    
+    .div.download {
+        width: 50px; /* Smaller width for mobile */
+        height: 100px; /* Smaller height for mobile */
+    }
 }
 /* Flashcard Container for Mobile Adjustments */
 @media (max-width: 599px) {
@@ -307,6 +312,11 @@ border-radius: 0.8vh;
 
     .flashcard {
         width: 80px; /* Smaller width for mobile */
+        height: 100px; /* Smaller height for mobile */
+    }
+
+    .div.download {
+        width: 50px; /* Smaller width for mobile */
         height: 100px; /* Smaller height for mobile */
     }
 }
